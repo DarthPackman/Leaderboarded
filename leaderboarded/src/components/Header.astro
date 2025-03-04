@@ -1,0 +1,137 @@
+---
+// Import necessary modules if needed, e.g., for authentication checks
+// import { getAuth } from 'firebase/auth';
+
+// Placeholder for authentication status (replace with actual logic later)
+const isLoggedIn = false;
+
+// Placeholder for user profile data (replace with actual data later)
+const user = {
+  displayName: 'Guest',
+  photoURL: '/images/default-profile.jpg',
+};
+---
+
+<header>
+  <div class="container">
+    <a href="/" class="logo">
+        <img src="/LeaderBoarded.png" alt="Leaderboarded" class="logo-img" />
+        Leaderboarded
+    </a>
+
+    <div class="user-actions">
+        <div class="user-actions">
+            {isLoggedIn ? (
+              // User is logged in
+              <div class="user-profile">
+                <button class="profile-dropdown-btn">
+                  <img src={user.photoURL} alt={`${user.displayName}'s Profile`} />
+                  <span>{user.displayName}</span>
+                </button>
+                <ul class="profile-dropdown-menu">
+                  <li>
+                    <a href="/profile">My Profile</a>
+                  </li>
+                  <li>
+                    <a href="/reviews">Reviews</a>
+                  </li>
+                  <li>
+                    <a href="/achievements">Achievements</a>
+                  </li>
+                </ul>
+              </div>
+            ) : (
+              // User is not logged in
+              <>
+                <a href="/login">Login</a>
+                <a href="/signup">Sign Up</a>
+              </>
+            )}
+      <button class="search-btn">
+        {/* Replace with appropriate icon or text */}
+        Search
+      </button>
+      <a href="/new" class="new-btn">+ New</a> {/* Add the button here */}
+    </div>
+  </div>
+</header>
+
+<style>
+  /* Add your CSS styles here to match your design */
+  header {
+    /* Background color for the whole header #5D3474, limit whole header to set size */
+    background-color: #5D3474;
+    color: white;
+    padding: 5px 0;
+  }
+  .container {
+    /* Make everything in one line, add margins to the sides if the screen is to big */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0px;
+  }
+  .logo {
+    /* Change Logo font to pixel one, and color */
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: white;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+  .logo-img {
+    /* Make the logo image a reasonable size */
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+  }
+  nav {
+    /* ... */
+  }
+  .user-actions {
+    /* Make user actions a thicker and nicer font, make white, make underline on hover, white on previously clicked*/
+    font-weight: bold;
+    color: white;
+    font-family: sans-serif;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+  }
+  .user-profile {
+    position: relative; /* To position the dropdown menu */
+  }
+  .profile-dropdown-btn {
+    /* Style the dropdown button */
+  }
+  .profile-dropdown-menu {
+    /* Style the dropdown menu */
+    display: none; /* Hide by default */
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+  .user-profile:hover .profile-dropdown-menu,
+  .user-profile:focus-within .profile-dropdown-menu {
+    display: block;
+  }
+  .auth-buttons {
+    /* ... */
+  }
+  .search-btn {
+    /* ... */
+  }
+  .new-btn {
+  /* ... */
+    background-color: #985ABF;
+    font-family: sans-serif;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+}
+</style>

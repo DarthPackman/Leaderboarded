@@ -1,6 +1,0 @@
-# Firebase Hosting Set Up
-npm install -g firebase-tools
-
-
-# Firebase Deploy
-firebase deploy
