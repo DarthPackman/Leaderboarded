@@ -19,7 +19,7 @@ npm install -g create-astro
 # Install Astro in Project
 npm install astro
 
-# Local Server for testing
+# Local Server for testing, in lower case leaderboarded
 npm run dev
 
 # Create build, in lower case leaderboarded
@@ -32,4 +32,4 @@ firebase deploy
 
 Build project in leaderboarded/src
 
-Images can go in leaderboarded/public
+Images can go in leaderboarded/public`
